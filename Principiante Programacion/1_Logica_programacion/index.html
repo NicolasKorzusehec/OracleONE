@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+</head>
+<body>
+    <h1>Cálculo IMC</h1>
+    <h6>Indice de masa corporal</h6>
+
+    
+    <script>
+
+        //Salto de linea
+        function br(){
+            let br = "<br>"; 
+            document.write(br);}
+        //Imprimir en html
+        function print(str){
+            document.write(str); 
+            br()}
+
+        br()
+        
+
+        //verificar imc()
+        var nombres = ["Nico", "Mati", "Agus"]
+        var pesos = [90, 80, 85]
+        var alturas = [1.75, 1.70, 1.83]
+
+        var info = nombres.map(function(e, i) {
+            return [e, pesos[i], alturas[i]]; 
+            //Crea un array de arrays, permite armar matrices?
+        });
+
+        print(info)
+
+        var res = []
+        function imc(){
+            for (let item of info){
+                let imc = item[1] / (item[2] * item[2])
+                res.push(imc)
+
+            }
+        }
+        imc()
+
+        function visualImc(){
+            i = 0
+            for (item of res){
+                print("El IMC de " + nombres[i] + " es " + Math.round(item)
+                ) 
+            }
+        }
+
+        visualImc()
+
+
+
+
+        var a = [1, 2, 3]
+        var b = ['a', 'b', 'c']
+        var c = a.map(function(e, i) {
+            return [e, b[i]]; 
+            //Crea un array de arrays, permite armar matrices?
+        });
+        //print(c)
+
+        /*peso = 90
+        altura = 1.75
+        imc = peso / (altura * altura)
+        res= "Tu IMC es " + Math.round(imc)
+        print(res)*/
+
+        /*
+        var tanque = 40;
+        var distancia = 300;
+        var eficiencia = distancia / tanque
+        print(distancia);
+        br()
+        */
+
+        //document.write("La edad de Nico es...")
+        //alert("La edad de Nico es?")
+    </script>
+</body>
+</html>
