@@ -25,36 +25,27 @@
         br()
         
 
-        //verificar imc()
+        //Calcula imc()
         var nombres = ["Nico", "Mati", "Agus"]
         var pesos = [90, 80, 85]
         var alturas = [1.75, 1.70, 1.83]
 
         var info = nombres.map(function(e, i) {
             return [e, pesos[i], alturas[i]]; 
-            //Crea un array de arrays, permite armar matrices?
-        });
-
+        /*Crea un array de arrays, permite armar matrices?*/});
         print(info)
 
         var res = []
         function imc(){
             for (let item of info){
                 let imc = item[1] / (item[2] * item[2])
-                res.push(imc)
-
-            }
-        }
+                res.push(imc)}}
         imc()
 
         function visualImc(){
             i = 0
             for (item of res){
-                print("El IMC de " + nombres[i] + " es " + Math.round(item)
-                ) 
-            }
-        }
-
+                print("El IMC de " + nombres[i] + " es " + Math.round(item))}}
         visualImc()
 
 
