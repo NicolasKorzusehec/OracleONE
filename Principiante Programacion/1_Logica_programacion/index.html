@@ -12,8 +12,7 @@
 
     
     <script>
-
-        //Salto de linea
+    //Salto de linea
         function br(){
             let br = "<br>"; 
             document.write(br);}
@@ -21,33 +20,54 @@
         function print(str){
             document.write(str); 
             br()}
-
         br()
         
 
-        //Calcula imc()
+    //Datos para calcular imc
         var nombres = ["Nico", "Mati", "Agus"]
         var pesos = [90, 80, 85]
         var alturas = [1.75, 1.70, 1.83]
-
+    /*Crea un array de arrays, permite armar matrices?*/
         var info = nombres.map(function(e, i) {
-            return [e, pesos[i], alturas[i]]; 
-        /*Crea un array de arrays, permite armar matrices?*/});
+            return [e, pesos[i], alturas[i]]; });
         print(info)
 
         var res = []
         function imc(){
+            res = []
             for (let item of info){
                 let imc = item[1] / (item[2] * item[2])
                 res.push(imc)}}
         imc()
-
-        function visualImc(){
+        function visualImc(res){
             i = 0
             for (item of res){
                 print("El IMC de " + nombres[i] + " es " + Math.round(item))}}
-        visualImc()
+        visualImc(res)
+        //
+        
+        function promedio(valores){
+            let res = 0
+            for (item of valores){res = res + item}
+            res = res / (valores.length)
+            return res}
+        print("El promedio de IMCs calculados es " + Math.round(promedio(res)))
 
+        function imcUsuario(){
+            let data = [
+                []
+            ]
+            data[0].push(prompt("Ingrese su nombre"))
+            data[0].push(prompt("Ingrese su peso"))
+            data[0].push(prompt("Ingrese su altura"))
+            print(data)
+            return data
+        }
+        info = []
+        info.push(imcUsuario())
+        print(info) //Por alguna razon no me lo corre
+        imc()
+        visualImc()
 
 
 
