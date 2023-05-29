@@ -16,16 +16,43 @@
 
     <script>
 
+        //Aplicando animaciones
+        /*
+        var pantalla = document.querySelector("canvas")
+        var pincel = pantalla.getContext("2d")
+        //pizarra
+        pincel.fillStyle = "lightgrey" 
+        pincel.fillRect(0,0,600,400)
 
+        var colores = ["blue", "red", "green"]
+        var pos = 0
 
+        function dibujarCirc(x, y, r){
+            let color = colores[pos]
 
+            pincel.fillStyle = color
+            pincel.beginPath()
+            pincel.arc(x,y,r,0,2*Math.PI)
+            pincel.fill()
+        }
 
+        //me quedo sin fondo
+        function limpiarPantalla(){pincel.clearRect(0,0,600,400)}
 
+        //desplazarCirc(20)
+        var radio = 10
+        var x = radio
+        function updatePantalla(){
+            limpiarPantalla()
+            dibujarCirc(x, radio, radio)
+            x++
+        }
+
+        setInterval(updatePantalla, 10) //ejecuta cada 10ms, es un bucle sin fin.
+        */
 
         //dibujar circulos donde clickees, cambiar el color en un determinado orden cada vez que des click derecho
         /*
-        var body = document.querySelector("body")
-
         var pantalla = document.querySelector("canvas")
         var pincel = pantalla.getContext("2d")
         //pizarra
