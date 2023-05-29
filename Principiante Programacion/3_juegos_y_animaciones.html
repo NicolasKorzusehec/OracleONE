@@ -16,8 +16,8 @@
 
     <script>
 
+
         //Aplicando animaciones
-        /*
         var pantalla = document.querySelector("canvas")
         var pincel = pantalla.getContext("2d")
         //pizarra
@@ -39,17 +39,21 @@
         //me quedo sin fondo
         function limpiarPantalla(){pincel.clearRect(0,0,600,400)}
 
-        //desplazarCirc(20)
+        sentido = true
         var radio = 10
         var x = radio
         function updatePantalla(){
             limpiarPantalla()
             dibujarCirc(x, radio, radio)
-            x++
+            
+            if (x == radio) {sentido = true}
+            else if (x == 600-radio){sentido = false}
+
+            if (sentido) {x++}
+            else {x--}
         }
 
         setInterval(updatePantalla, 10) //ejecuta cada 10ms, es un bucle sin fin.
-        */
 
         //dibujar circulos donde clickees, cambiar el color en un determinado orden cada vez que des click derecho
         /*
