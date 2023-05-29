@@ -27,3 +27,6 @@ print(c)
 ```
 
 # Desarrollos por curso
+
+## Documentacion Canvas html
+https://developer.mozilla.org/es/docs/Web/API/Canvas_API

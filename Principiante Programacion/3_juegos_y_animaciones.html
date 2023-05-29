@@ -9,22 +9,261 @@
 </head>
 <body>
     <h1>Juegos y animaciones</h1>
-    
+
+    <canvas width="600" height="400"> 
+
+    </canvas>
+
     <script>
-        //Salto de linea
-        function br(){
-            let br = "<br>"; 
-            document.write(br);}
-        //Imprimir en html
-        function print(str){
-            document.write(str); 
-            br()}
-        br()
-        //devuelve numero aleatorio del 1 al 10
-        function random() {return Math.round(Math.random()*10)}
+        
+        var pantalla = document.querySelector("canvas")
+        var pincel = pantalla.getContext("2d")
+        //pizarra
+        pincel.fillStyle = "lightgrey" 
+        pincel.fillRect(0,0,600,400)
 
+        function alertar(){
+            alert("Usted hizo un click")
+        }
+
+        pantalla.onclick = alertar
+
+
+
+        //mostrar un mensaje con la hora actual en el siguiente formato HH:MM:SS y con las coordenadas (x,y) cuando el usuario haga clic en la pantalla.
+        /*
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");    
+        pincel.fillStyle = "grey";
+        pincel.fillRect(0,0,600,400); 
+
+        function mostrarMensaje(evento){
+            console.log(evento) // visualizar la informacion del evento
             
+            //pos dentro del mapa = pos mouse - margenes mapa
+            //analogo a movimiento relativo Xp = Xp/o + Xo
+            var x = evento.pageX - pantalla.offsetLeft; //pos x 
+            var y = evento.pageY - pantalla.offsetTop; //pos y
+            var d = new Date(); //crea una variable de tipo date
+            var hora = checkTime(d.getHours()) + ":" + checkTime(d.getMinutes()) + ":" + checkTime(d.getSeconds());
+            //Verifica si el número de las horas, minutos o segundos, tiene un solo dígito, 
+            //caso positivo le adiciona el cero en la frente para obtener el formato deseado 00:00:00
+            function checkTime(i){
+                if (i<10) { i="0" + i;}
+                return i;
+            }
 
+            alert("La hora es: " + hora + " y las coordenadas son: x=" + x + ", y=" + y);
+        }
+        pantalla.onclick = mostrarMensaje
+        */
+
+        //Dibujar grafico de barras y texto
+        /*
+        var pantalla = document.querySelector("canvas")
+        var pincel = pantalla.getContext("2d")
+        //pizarra
+        pincel.fillStyle = "lightgrey" 
+        pincel.fillRect(0,0,600,400) 
+
+        function dibujarRect(x, y, color, ancho, alto) {
+            pincel.fillStyle = color 
+            pincel.strokeStyle = "black"
+            pincel.fillRect(x, y, ancho, alto)
+            pincel.strokeRect(x, y, ancho, alto)
+        }
+
+        function escribir(x, y , texto) {
+            pincel.font="15px Georgia";
+            pincel.fillStyle="black";
+            pincel.fillText(texto, x, y);
+        }
+
+        function graficoBarras (x, y, datos, colores, str, scale) {
+            escribir(x, y-10, str)
+            pos = 0
+            for (let i in datos) {
+                let alto = datos[pos] * scale
+                dibujarRect(x, y, colores[pos], 50, alto)
+                y += alto 
+                pos++
+            }
+        }
+
+        //datos
+        var serie2009 = [6, 47, 41, 3, 3]
+        var serie2019 = [81, 9, 3, 3, 4]
+        var colores = ["blue","green","yellow", "red","gray"];
+        var escala = 3
+
+        graficoBarras(50, 50, serie2009, colores, "2009", escala)
+        graficoBarras(150, 50, serie2019, colores, "2019", escala)
+        */
+
+        //Dibujar flor
+        /*
+        var pantalla = document.querySelector("canvas")
+        var pincel = pantalla.getContext("2d")
+        //pizarra
+        pincel.fillStyle = "lightgrey" 
+        pincel.fillRect(0,0,600,400) 
+        
+        function dibujarCirc(x, y, radio, color) {
+            pincel.fillStyle = color
+            pincel.beginPath()
+            pincel.arc(x,y,radio,0,2*3.14)
+            pincel.fill()
+        }
+
+        function dibujarFlor(x,y,r){
+            let color = ""
+            color = "red"
+            dibujarCirc(x, y, r, color)
+            color = "orange"
+            dibujarCirc(x - 2*r, y, r, color)
+            color = "yellow"
+            dibujarCirc(x, y - 2*r, r, color)
+            color = "black"
+            dibujarCirc(x + 2*r, y, r, color)
+            color = "blue"
+            dibujarCirc(x, y + 2*r, r, color)
+        }
+
+        dibujarFlor(300,200,10) 
+        */
+
+        //Dibujar cuadrados con bucles
+        /*
+        var pantalla = document.querySelector("canvas")
+        var pincel = pantalla.getContext("2d")
+        //pizarra
+        pincel.fillStyle = "lightgrey" 
+        pincel.fillRect(0,0,600,400) 
+
+        function pintarCuadrados(x, y, filas, columnas, color) {
+            let posx = x
+            let posy = y
+            let ancho = 50
+            let alto = 50
+            let colorFill = color
+            let colorStroke = "black"
+            for (let fils = 0; fils < filas; fils++) {
+                for (let cols = 0; cols < columnas; cols ++) {
+                    pincel.fillStyle = colorFill 
+                    pincel.strokeStyle = colorStroke
+                    pincel.fillRect(posx, posy, ancho, alto)
+                    pincel.strokeRect(posx, posy, ancho, alto)
+
+                    posx += 50
+                }
+                posx = x
+                posy += 50
+            }
+        }
+
+        //interes en una funcion de posicion que relacione pos del cuadrado a medidas en pixeles sin necesidad de que el usuario o calcule.
+        var x=0
+        var y=0
+        var filas = 1
+        var columnas = 3
+        var color = "green"
+        pintarCuadrados(x, y, filas, columnas, color)
+
+        x=100
+        y=50
+        filas = 1
+        columnas = 5
+        color = "yellow"
+        pintarCuadrados(x, y, filas, columnas, color)
+
+        x=50
+        y=100
+        filas = 1
+        columnas = 10
+        color = "red"
+        pintarCuadrados(x, y, filas, columnas, color)
+        */
+
+        //Escuadra con canva de 350 x 350
+        /*
+        var pantalla = document.querySelector("canvas")
+        var pincel = pantalla.getContext("2d")
+        //pizarra
+        pincel.fillStyle = "lightgrey" 
+        pincel.fillRect(0,0,600,400) 
+        //Para diseñar es necesario inicializar un path y mover el pincel para una posición
+        pincel.fillStyle = "black"
+        pincel.beginPath()
+        pincel.moveTo(125,25) 
+        pincel.lineTo(475,375) 
+        pincel.lineTo(125,375)
+        pincel.fill() 
+
+        pincel.fillStyle = "lightgrey"
+        pincel.beginPath()
+        pincel.moveTo(175,150) 
+        pincel.lineTo(350,325) 
+        pincel.lineTo(175,325)
+        pincel.fill() 
+        */
+
+        //Cara creeper en canva 
+        /*
+        var pantalla = document.querySelector("canvas")
+        var pincel = pantalla.getContext("2d")
+        
+        //pizarra
+        pincel.fillStyle = "lightgrey" 
+        pincel.fillRect(0,0,600,400) 
+
+        //Cabeza
+        pincel.fillStyle = "darkgreen" 
+        pincel.fillRect(125,50,350,300) 
+
+        //Cara
+        pincel.fillStyle = "black"  
+        //Ojos
+        pincel.fillRect(175,110,90,90) 
+        pincel.fillRect(335,110,90,90) 
+        //Nariz
+        pincel.fillRect(265,200,70,100) 
+        //Boca
+        pincel.fillRect(225,240,40,110)
+        pincel.fillRect(335,240,40,110) 
+        */
+
+        //Primer uso de canvas
+        /*
+        var pantalla = document.querySelector("canvas")
+        var pincel = pantalla.getContext("2d")
+        
+        // +x hacia la derecha
+        // +y hacia la abajo
+        pincel.fillStyle = "lightgrey" 
+        //le da el color que va a usar para un determinado trazo, funciona secuencial
+        pincel.fillRect(0,0,600,400) 
+        //(Xinicial, Yinicial, ancho, alto)
+
+        pincel.fillStyle = "green"
+        pincel.fillRect(0,0,200,400) 
+
+        pincel.fillStyle = "red"
+        pincel.fillRect(400,0,600,400) 
+
+        pincel.fillStyle = "yellow"
+        pincel.beginPath()
+        pincel.moveTo(300,200) //punto inicio xy, de lo contrario comenzario en el 0,0
+        pincel.lineTo(200,400) 
+        pincel.lineTo(400,400)
+        pincel.fill() //Rellenar grafico con el color definido
+
+        pincel.fillStyle = "blue"
+        pincel.beginPath()
+        pincel.arc(300,200,50,0,2*3.14) // (x,y,radio, angulo inicial, angulo final, 2pi)
+        pincel.fill() 
+        */
+
+        
 
     </script>
 </body>
