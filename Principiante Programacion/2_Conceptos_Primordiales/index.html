@@ -23,9 +23,10 @@
             br()}
         br()
 
-        var secreto = 5 
+        var secreto = Math.round(Math.random()*10)
         var input = document.querySelector("input")
         var button = document.querySelector("button")
+        input.focus()
         function verificar(){
             if (parseInt(input.value) == secreto) {
                 alert("Acerto")
@@ -33,6 +34,9 @@
             else {
                 alert("Erro")
             }
+            input.value = ""
+            input.focus() //por cada ejecucion ubica el cursor devuelta en el objeto
+            //es valido el enter si clickeamos tab y despues el enter
         }
             
         button.onclick = verificar 
