@@ -17,7 +17,67 @@
     <script>
 
 
+        //Juego: Tiro al blanco
+        /*
+        var pantalla = document.querySelector("canvas")
+        var pincel = pantalla.getContext("2d")
+        //pizarra
+        pincel.fillStyle = "lightgrey" 
+        pincel.fillRect(0,0,600,400)
+
+        function dibujarCirc(x, y, r, color){
+            pincel.fillStyle = color
+            pincel.beginPath()
+            pincel.arc(x,y,r,0,2*Math.PI)
+            pincel.fill()
+        }
+
+        //me quedo sin fondo
+        function limpiarPantalla(){pincel.clearRect(0,0,600,400)}
+
+        sentidoX = true
+        var radio = 30
+        var x= radio
+        var y = radio
+
+        function circRandom(){
+            x = radio + Math.floor(Math.random()*(600-2*radio))
+            y = radio + Math.floor(Math.random()*(400-2*radio))
+            updatePantalla(x,y) 
+        }
+        
+
+        function updatePantalla(x,y){
+            limpiarPantalla()
+            dibujarCirc(x, y, radio, "red")
+            dibujarCirc(x, y, radio/3*2, "white")
+            dibujarCirc(x, y, radio/3, "red")
+        }
+
+        function tiro(evento){
+            //pos mouse
+            let xmouse = evento.pageX - pantalla.offsetLeft
+            let ymouse = evento.pageY - pantalla.offsetTop
+        
+            //rango de valores validos
+            let minX = (x - radio/3)
+            let maxX = (x + radio/3)
+            let minY = (y - radio/3)
+            let maxY = (y + radio/3)
+
+            if ( (xmouse < maxX) & (xmouse > minX) ) { 
+                if ( (ymouse < maxY) & (ymouse > minX) )
+                {alert("Acerto")}
+            }
+        }
+
+        pantalla.onclick = tiro
+        setInterval(circRandom, 2000) 
+        */
+
+
         //Aplicando animaciones
+        /*
         var pantalla = document.querySelector("canvas")
         var pincel = pantalla.getContext("2d")
         //pizarra
@@ -45,7 +105,7 @@
         function updatePantalla(){
             limpiarPantalla()
             dibujarCirc(x, radio, radio)
-            
+
             if (x == radio) {sentido = true}
             else if (x == 600-radio){sentido = false}
 
@@ -54,6 +114,7 @@
         }
 
         setInterval(updatePantalla, 10) //ejecuta cada 10ms, es un bucle sin fin.
+        */
 
         //dibujar circulos donde clickees, cambiar el color en un determinado orden cada vez que des click derecho
         /*
