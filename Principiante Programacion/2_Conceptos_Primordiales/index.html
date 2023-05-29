@@ -9,6 +9,8 @@
 </head>
 <body>
     <h1>Conceptos Primordiales</h1>
+    <input/>
+    <button>Verificar secreto</button>
     
     <script>
         //Salto de linea
@@ -19,41 +21,69 @@
         function print(str){
             document.write(str); 
             br()}
-
         br()
 
-        "continuar desde el repita actividades"
+        var secreto = 5 
+        var input = document.querySelector("input")
+        var button = document.querySelector("button")
+        function verificar(){
+            if (parseInt(input.value) == secreto) {
+                alert("Acerto")
+            }
+            else {
+                alert("Erro")
+            }
+        }
+            
+        button.onclick = verificar 
+        //No debe colocarse los parentesis de lo contrario se ejecuta apenas carga la pagina
+
+        //imprimir  filas y columnas
+        /*b 
+        for (let fil = 1; fil <= 5; fil ++){
+            for (let col = 1; col<=5; col ++){
+                document.write("*")
+            }
+            br()
+        }*/
 
         //En que anio hubo un mundial de la fifa?
-        /*print("Estos son los anios que hubo mundial")
+        /*
+        print("Estos son los anios que hubo mundial")
         fin = prompt("Ingrese el ultimo anio que quiere considerar para calcular que anios hubo mundial")
         i = 1930 //Primer mundial
         while (i<=fin){
             print("Hubo mundial de la fifa en el anio " + i)
             i += 4}*/
 
-
         //Adivinador
         /*
+        var intentos = 3
         function sorteo(n){return Math.round(Math.random()*n)}
         function jugar(){
             var cant = parseInt(prompt("Desde el 1 hasta que numero positivo te gustaria poder adivinar"))
             var numero = sorteo(cant)
-            adivinar(numero, cant)}
-        function adivinar(numeroPensado, cant){
-            propuesta = parseInt(prompt("Elija un numero del 1 al " + cant))
-            if (propuesta >10 || propuesta<=0){
-                alert(propuesta + " No esta entre el 1 y el 10 incluidos")
-                adivinar()}
-            if (propuesta > numeroPensado){
-                alert(propuesta + " es mas grande que el numero pensado")
-                adivinar()}
-            if (propuesta < numeroPensado){
-                alert(propuesta + " es mas chico que el numero pensado")
-                adivinar()}
-            if (propuesta = numeroPensado){
-                print(cant + " es el numero pensado. Felicidades.")}}
-        jugar()*/
+            adivinar(numero, cant,intentos)}
+        function adivinar(numeroPensado, cant, intentos){
+            if(intentos >0){
+                propuesta = parseInt(prompt("Elija un numero del 1 al " + cant))
+                if (propuesta >10 || propuesta<=0){
+                    alert(propuesta + " No esta entre el 1 y el 10 incluidos")
+                    adivinar(numeroPensado, cant, intentos)}
+                if (propuesta > numeroPensado){
+                    alert(propuesta + " es mas grande que el numero pensado")
+                    intentos = intentos -1
+                    adivinar(numeroPensado, cant, intentos)}
+                if (propuesta < numeroPensado){
+                    alert(propuesta + " es mas chico que el numero pensado")
+                    intentos = intentos -1
+                    adivinar(numeroPensado, cant, intentos)}
+                if (propuesta = numeroPensado){
+                    print(cant + " es el numero pensado. Felicidades.")}
+                }
+            else {print("Se acabaron los intentos")}}
+        jugar()
+        */  
 
         //Futbol
         /*
