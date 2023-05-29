@@ -23,6 +23,36 @@
             br()}
         br()
 
+
+
+
+        //Adivinar numeros con arrays y elementos html
+        var secretos = [3, 5, 7, 9]
+
+        var input = document.querySelector("input")
+        var button = document.querySelector("button")
+        input.focus()
+
+        function verificar(){
+            //for (var i in secretos) {}
+            var found = false
+            for (var pos = 0; pos < secretos.length; pos++) {
+                if (parseInt(input.value) == secretos[pos]) 
+                {
+                    found = true;
+                    break; //si ya lo encontro no hace falta que siga iterando
+                }; 
+            };
+            if(found == true) {alert("Acerto")}
+            else {alert("Erro")};
+            input.value = "";
+            input.focus(); 
+        };    
+        button.onclick = verificar 
+
+        
+        //Adivinar numeros del 1 al 10 con elementos html
+        /*
         var secreto = Math.round(Math.random()*10)
         var input = document.querySelector("input")
         var button = document.querySelector("button")
@@ -37,10 +67,10 @@
             input.value = ""
             input.focus() //por cada ejecucion ubica el cursor devuelta en el objeto
             //es valido el enter si clickeamos tab y despues el enter
-        }
-            
+        }    
         button.onclick = verificar 
         //No debe colocarse los parentesis de lo contrario se ejecuta apenas carga la pagina
+        */
 
         //imprimir  filas y columnas
         /*b 
