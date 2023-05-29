@@ -17,6 +17,69 @@
     <script>
 
 
+        //funcion de pincel mientras se realiza click IZQUIERDO + cambio de color
+        /*
+        var pantalla = document.querySelector("canvas")
+        var pincel = pantalla.getContext("2d")
+        //pizarra
+        pincel.fillStyle = "lightgrey" 
+        pincel.fillRect(0,0,600,400)
+
+        var lado = 50
+        var xo = 0
+
+        function dibujarSquares(){
+            pincel.fillStyle = "red" 
+            pincel.fillRect(xo,0,lado,lado)
+
+            pincel.fillStyle = "green" 
+            pincel.fillRect(xo+lado,0,lado,lado)
+
+            pincel.fillStyle = "blue" 
+            pincel.fillRect(xo+lado*2,0,xo+lado,xo+lado)
+        }
+        dibujarSquares()
+
+        var puedoDibujar = false;
+        var color = "blue" //por defecto
+
+        function dibujarCirculo(evento) {
+            var x = evento.pageX - pantalla.offsetLeft;
+            var y = evento.pageY - pantalla.offsetTop;
+            if ((x <= lado * 3) & (y <= lado)){
+                changeColor(x,y)
+            }
+            else {
+                if(puedoDibujar) {
+                    pincel.fillStyle = color;
+                    pincel.beginPath();
+                    pincel.arc(x, y, 5, 0, 2 * Math.PI);
+                    pincel.fill();
+                }
+            }
+            dibujarSquares()
+        }
+
+        function changeColor(x,y){
+            if (x<lado){
+                color = 'red';
+            }
+            else if ((x > lado) & (x < 2*lado)){
+                color = 'green';
+            }
+            else if ((x > 2*lado) & (x < 3*lado)){
+                color = 'blue';
+            }
+        }
+
+        function habilitarDibujar() {puedoDibujar = true;}
+        function deshabilitarDibujar() {puedoDibujar = false;}
+        
+        pantalla.onmousemove = dibujarCirculo;
+        pantalla.onmousedown = habilitarDibujar;
+        pantalla.onmouseup = deshabilitarDibujar;
+        */
+
         //Juego: Tiro al blanco
         /*
         var pantalla = document.querySelector("canvas")
@@ -74,7 +137,6 @@
         pantalla.onclick = tiro
         setInterval(circRandom, 2000) 
         */
-
 
         //Aplicando animaciones
         /*
