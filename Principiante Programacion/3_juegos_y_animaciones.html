@@ -16,19 +16,41 @@
 
     <script>
         
+
+
+
+        
+
+        //dibujar circulos donde clickees y alertar posicion
+        /*
         var pantalla = document.querySelector("canvas")
         var pincel = pantalla.getContext("2d")
         //pizarra
         pincel.fillStyle = "lightgrey" 
         pincel.fillRect(0,0,600,400)
 
-        function alertar(){
-            alert("Usted hizo un click")
+        function alertar(x, y){
+            alert("Usted hizo un click en x=" + x + " e y=" + y)
         }
 
-        pantalla.onclick = alertar
+        function dibujarCirc(evento){
+            console.log(event)
 
+            let x = evento.pageX - pantalla.offsetLeft; //pos x 
+            let y = evento.pageY - pantalla.offsetTop; //pos y
+            let r = 10
+            let color = "blue"
 
+            pincel.fillStyle = color
+            pincel.beginPath()
+            pincel.arc(x,y,r,0,2*3.14)
+            pincel.fill()
+
+            alertar(x,y)
+        }
+        
+        pantalla.onclick = dibujarCirc
+        */
 
         //mostrar un mensaje con la hora actual en el siguiente formato HH:MM:SS y con las coordenadas (x,y) cuando el usuario haga clic en la pantalla.
         /*
