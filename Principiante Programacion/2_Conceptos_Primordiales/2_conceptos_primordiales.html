@@ -22,12 +22,32 @@
             document.write(str); 
             br()}
         br()
+        //devuelve numero aleatorio del 1 al 10
+        function random(){
+            return Math.round(Math.random()*10)
+        }
 
+ 
 
+        //Adivinar numeros con array y elementos html
+        /*
+        var cant = parseInt(prompt("Elija la cantidad de numeros que forman parte de los secretos"))
+        function numRandoms(cant) {
+            let secretos = []
+            while (secretos.length < cant) {
+                let num = random()
+                //console.log(num)
+                //console.log (secretos.indexOf(num) + " es el indice")
+                if (num != 0) {
+                    if (secretos.indexOf(num) == -1) 
+                        {secretos.push(num)}
+                }
+            }
+            return secretos
+        }
+        var secretos = numRandoms(cant)
 
-
-        //Adivinar numeros con arrays y elementos html
-        var secretos = [3, 5, 7, 9]
+        console.log(secretos)
 
         var input = document.querySelector("input")
         var button = document.querySelector("button")
@@ -49,8 +69,8 @@
             input.focus(); 
         };    
         button.onclick = verificar 
+        */
 
-        
         //Adivinar numeros del 1 al 10 con elementos html
         /*
         var secreto = Math.round(Math.random()*10)
@@ -73,7 +93,7 @@
         */
 
         //imprimir  filas y columnas
-        /*b 
+        /* 
         for (let fil = 1; fil <= 5; fil ++){
             for (let col = 1; col<=5; col ++){
                 document.write("*")
@@ -90,7 +110,7 @@
             print("Hubo mundial de la fifa en el anio " + i)
             i += 4}*/
 
-        //Adivinador
+        //Adivinar num random con prompts
         /*
         var intentos = 3
         function sorteo(n){return Math.round(Math.random()*n)}
@@ -119,7 +139,7 @@
         jugar()
         */  
 
-        //Futbol
+        //Futbol calcular puntos del equipo y si mejoro
         /*
         print("Futbol")
         var victorias = parseInt(prompt("Informe cantidad de victorias"))
@@ -132,7 +152,7 @@
         else if (puntosobtenidos < 28) {estado = "peor"};
         print("El equipo esta " + estado + " que el anio pasado")*/
 
-        //imc
+        //calcular imc
         /*
         br()
         print("Calculo IMC mejorado")
